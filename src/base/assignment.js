@@ -1,0 +1,3 @@
+function Assignment(blocks, effects){
+
+}

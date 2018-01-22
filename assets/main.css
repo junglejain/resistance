@@ -1,0 +1,23 @@
+div.left{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+div.to_bottom{
+    padding-bottom: 10px;
+    position:fixed;
+    bottom: 0;
+}
+
+div.right{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+}

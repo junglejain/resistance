@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <script>require('../../src/pages/base.js')</script>
+    <script>require('../../src/pages/prefspage.js')</script>
+    <script type="text/javascript">
+        window.onbeforeunload = function (e) {
+            std.hideMe('prefs');
+            return false;
+        }
+    </script>
+    <title>Preferences</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Sex and Gender Ratios</h2>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="num_male" class="col-sm-2 control-label" title="Male presenting as masculine">Males</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <input type="range" class="form-control num_rng" id="num_male" min="0" max="100" step="1" value="">
+                        <div class="input-group-addon" id="num_male_ct" style="min-width: 90px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="num_cb" class="col-sm-2 control-label" title="Female presenting as masculine">Cunt Boys</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <input type="range" class="form-control num_rng" id="num_cb" min="0" max="100" step="1" value="">
+                        <div class="input-group-addon" id="num_cb_ct" style="min-width: 90px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="num_herm" class="col-sm-2 control-label" title="Intersex presenting as masculine">Hermaphrodites</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <input type="range" class="form-control num_rng" id="num_herm" min="0" max="100" step="1" value="">
+                        <div class="input-group-addon" id="num_herm_ct" style="min-width: 90px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="num_futa" class="col-sm-2 control-label" title="Intersex presenting as feminine">Futanari</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <input type="range" class="form-control num_rng" id="num_futa" min="0" max="100" step="1" value="">
+                        <div class="input-group-addon" id="num_futa_ct" style="min-width: 90px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="num_dg" class="col-sm-2 control-label" title="Male presenting as feminine">Dick Girls</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <input type="range" class="form-control num_rng" id="num_dg" min="0" max="100" step="1" value="">
+                        <div class="input-group-addon" id="num_dg_ct" style="min-width: 90px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="num_female" class="col-sm-2 control-label" title="Female presenting as feminine">Females</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <input type="range" class="form-control num_rng" id="num_female" min="0" max="100" step="1" value="">
+                        <div class="input-group-addon" id="num_female_ct" style="min-width: 90px;"></div>
+                    </div>
+                </div>
+            </div>
+            <P/>
+            <button type="button" class="btn btn-primary pull-right" onclick="btn_Save();">Save</button>
+        </form>
+    </div>
+</body>
+</html>

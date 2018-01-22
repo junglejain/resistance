@@ -1,0 +1,20 @@
+{
+  "Stats": {
+    "Will":       "Are you submissive, or dominant?",
+    "Control":    "Are you passionate, or collected?",
+    "Duplicity":  "Are you trustworthy, or a sneak and a liar?",
+    "Fitness":    "Are you thin and weak, or muscular and strong?"
+  },
+
+  "Hidden": {
+    "Stress":     "How much stress are we under?",
+    "Arousal":    "How turned on are we?",
+    "Kindness":   "How kind are we?",
+    "Cruelty":    "How cruel are we?"
+  },
+
+  "Special": {
+    "Trust":      "Measure of trust in the PC",
+    "Love":       "Measure of love for the PC"
+  }
+}
