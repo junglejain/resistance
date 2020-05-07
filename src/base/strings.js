@@ -10,25 +10,28 @@ function Strings(){
             'them':     'him',
             'their':    'his',
             'theirs':   'his',
-            'themself': 'himself'
+            'themself': 'himself',
+            'master':   'master',
         },
         "female": {
             'they':     'she',
             'them':     'her',
             'their':    'her',
             'theirs':   'hers',
-            'themself': 'herself'
+            'themself': 'herself',
+            'master':   'mistress'
         }
     };
 
-    this.template = ['they', 'them', 'their', 'theirs', 'themself', 'name'];
+    this.template = ['they', 'them', 'their', 'theirs', 'themself', 'master', 'name'];
 }
 Strings.prototype = {
     replace_gender: function(match, actor){
         if (match.indexOf('name') > -1) {
             return actor.Name;
         }
-        replacer = this.pronouns[actor.PresentsAs][match];
+        match = match.slice(1);
+        let replacer = this.pronouns[actor.PresentsAs][match.toLowerCase()];
         if (match.charAt(0) === match.charAt(0).toUpperCase()) {
             replacer = replacer.charAt(0).toUpperCase() + replacer.slice(1);
         }
@@ -36,25 +39,41 @@ Strings.prototype = {
     },
 
     fmt_str: function(str, actor){
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 7; i++) {
             let template_pronoun = this.template[i];
-            let replacer = this.replace_gender(template_pronoun, actor);
-            str = str.replace(new RegExp('\%('+template_pronoun+')','gi'), replacer);
+            str = str.replace(new RegExp('\%('+template_pronoun+')','gi'), function(match){
+                return Strings.prototype.replace_gender.call(new Strings(), match, actor);
+            });
         }
+        this.actor = null;
         return str;
+    },
+
+    byNumber: function(list, num){
+        let keys = Object.keys(list);
+        let i = 0;
+        while (num > keys[i]){
+            i++;
+        }
+        return list[keys[i]];
     },
 
     describe: function(actor){
         if (typeof(this.stringList['descriptions']) === 'undefined'){
-            this.stringList['descriptions'] = yaml.safeLoad(fs.readFileSync('/home/ixti/example.yml', 'utf8'));
+            this.stringList['descriptions'] = yaml.safeLoad(fs.readFileSync('./data/strings/descriptions.yml', 'utf8'));
         }
         let ans = ['average', 'ugly', 'attractive'];
         let looks = "a "+actor.Looks;
         if (ans.includes(actor.Looks)){
             looks = "an "+actor.Looks;
+            if (actor.Looks === 'average'){
+                looks = looks + " looking";
+            }
         }
-        let desc = "%name is "+looks+", "+actor.Skin+" skinned "+actor.Gender+" with "+actor.Hair+" hair and "+actor.Eyes+" eyes. ";
-
+        let desc = "<P>%name is "+looks+", "+actor.Skin+" skinned "+actor.Gender+" with "+actor.Hair+" hair and "+actor.Eyes+" eyes. ";
+        desc = desc + this.byNumber(this.stringList['descriptions']['Fitness'], actor.Fitness.value);
+        desc = desc + this.byNumber(this.stringList['descriptions']['Will'], actor.Will.value);
+        return this.fmt_str(desc, actor);
     }
 }
 

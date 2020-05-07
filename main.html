@@ -10,27 +10,34 @@
 <body>
     <script src="src/model/char.js"></script>
     <script src="src/base/strings.js"></script>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 left">
+            <div class="col-md-2">
                 <a href="#" onclick="doChar();">Make Char</a>
                 <div class="to_bottom">
                     <a href="#" onclick="std.clickSettings()"><img src="assets/buttons/dark_settings.png"/></a>
                 </div>
             </div>
-            <div class="col-md-9 right">
+            <div class="col-md-8">
                 <h1>Hello, World!</h1>
                 <div id="chars">
                 </div>
             </div>
+            <div class="col-md-2">
+                Test.
+            </div>
         </div>
     </div>
     <script type="text/javascript">
+        const charDiv = document.getElementById('chars');
         function doChar(){
             let char = new Char(window.prefs, 0, true);
             console.log(char);
             let strings = new Strings();
-            console.log(strings.fmt_str("Do you see %them? I think %their name is %name.",char));
+            let div = document.createElement('div');
+            div.innerHTML = strings.describe(char);
+            charDiv.innerHTML = '';
+            charDiv.appendChild(div);
         }
     </script>
 </body>

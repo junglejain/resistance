@@ -1,0 +1,29 @@
+Fitness:
+  20: >
+    %Their body is almost impressive for how <strong>thin and frail</strong> it is, and yet still able to stand
+    upright. There's no muscle tone to speak of, and %they seems liable to faint at from lack of food at any moment.
+  40: >
+    %They is <strong>slender and willowly,</strong> with no muscle tone to speak of, but not unhealthy.  Some of
+    %their joints look a little sharp, but you cannot actually count the bones in %their arm.
+  60: >
+    %Their physique is <strong>unremarkable</strong> -- an average amount of strength under an average amount of padding.
+  80: >
+    %They is <strong>lithe and toned,</strong> with the body of a natural athelete.  %Their musculature is well defined,
+    but not overly big.
+  101: >
+    %Their body is <strong>thick with corded muscle</strong> and limbs the size of small trees.
+Will:
+  20: >
+    %They stands at attention, with %their eyes downcast and %their arms locked behind %their back.
+    %They seems very <strong>well-trained.</strong>
+  40: >
+    While %they will occasionally peek up at you from under %their lashes, %they seems to <strong>know %their
+    place.</strong>
+  60: >
+    %They watches you with a considering gaze, <strong>neither challenging nor meek.</strong>
+  80: >
+    %They meets your gaze without hesitation and looks you over with <strong>undisguised challenge</strong> in %their
+    eyes.
+  101: >
+    %They watches you with hard eyes.  Whatever the law may say, %they knows that <strong>%they is the %master,</strong>
+    you the slave.

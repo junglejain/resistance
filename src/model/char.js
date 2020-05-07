@@ -107,7 +107,7 @@ Char.prototype = {
             if (pc){
                 this[stats[i]] = new Attr(50, 5, 5, 1, false);
             }else {
-                let stat = this.byNormalDist(25, 75);
+                let stat = this.byNormalDist();
                 this[stats[i]] = new Attr(stat, 5, 5, 1, false);
             }
             this[stats[i]].tooltip = global.skills.Stats[stats[i]];

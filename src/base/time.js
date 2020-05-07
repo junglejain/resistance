@@ -76,7 +76,7 @@ Time.prototype = {
         }
 
         return ret_time + this.year + ' ' + ('0' + this.hour).slice(-2)+':'+('0' + this.minute).slice(-2);
-    }
+    },
 
     addMinutes: function (minutes) {
         let adding = this.minute + Math.abs(minutes);

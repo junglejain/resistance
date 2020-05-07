@@ -21,3 +21,8 @@ div.right{
     bottom: 0;
     overflow-y: scroll;
 }
+
+strong{
+    font-weight: bold;
+    color: deepskyblue;
+}
