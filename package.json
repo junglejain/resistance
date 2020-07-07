@@ -9,7 +9,7 @@
   "author": "JungleJain <junglejain00@gmail.com>",
   "devDependencies": {
     "devtron": "^1.4.0",
-    "electron": "^1.8.8",
+    "electron": "^9.1.0",
     "electron-debug": "^1.4.0"
   },
   "dependencies": {
